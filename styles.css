@@ -469,6 +469,13 @@ body.legal-page {
     opacity: 0.8;
 }
 
+.back-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+    opacity: 1;
+}
+
 @media (max-width: 640px) {
     .legal-container {
         padding: 2rem 1rem;
