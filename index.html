@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iBantu Technologies</title>
+    <link rel="icon" type="image/png" href="public/logo.png" />
+    <link rel="preload" href="public/logo.png" as="image">
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +16,12 @@
 </head>
 <body id="top-of-page">
     <div class="underlay"></div>
+    <div id="logo-splash" aria-hidden="true">
+        <img src="public/logo.png" alt="iBantu logo" />
+    </div>
+    <div id="corner-logo">
+        <img src="public/logo.png" alt="iBantu logo" />
+    </div>
     <header>
         <a href="/">
             <h1>iBantu Technologies</h1>
@@ -180,10 +188,10 @@
             <div class="projects-contents">
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="public/scripthive.png" alt="mocash thumbnail" />
+                        <img src="public/scripthive.png" alt="Script Hive thumbnail" />
                     </div>
                     <div class="card-column">
-                        <a target="_blank" href="https://www.scripthive.com/" class="anchor-text">
+                        <a target="_blank" href="https://www.scripthive.com/" class="anchor-text" rel="noopener noreferrer">
                             <h3 class="card-header">Script Hive · Movie Scripts Database <i class="fa-solid fa-arrow-right anchor-icon"></i></h3>
                         </a>
                         <p>Worked on the improvement of the Script Hive website, which is a website for users across the world to search for and download movie scripts. Our work included creating UI components for the donations segment, improving user feedback upon downloads, improving the downloads page UI, and coming up with restrictive measure to ensure users don’t scrape the site.  </p>
@@ -284,6 +292,17 @@
             </a>
             
     </footer>
-    
+    <script>
+        const splash = document.getElementById('logo-splash');
+        window.addEventListener('DOMContentLoaded', () => {
+            window.setTimeout(() => {
+                if (!splash) return;
+                splash.classList.add('fade-out');
+                window.setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 650);
+            }, 2200);
+        });
+    </script>
 </body>
 </html>
