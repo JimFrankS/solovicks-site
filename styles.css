@@ -25,6 +25,56 @@ body{
     gap: 6rem;
 }
 
+#logo-splash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background: #0f172a;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+#logo-splash img {
+    max-width: min(45vw, 280px);
+    max-height: min(45vh, 280px);
+    width: auto;
+    height: auto;
+}
+
+#logo-splash.fade-out {
+    opacity: 0;
+    transform: scale(0.92);
+    pointer-events: none;
+}
+
+#corner-logo {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    width: 72px;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+#corner-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    #corner-logo {
+        top: 0.9rem;
+        right: 0.9rem;
+        width: 56px;
+        padding: 0.35rem;
+    }
+}
+
 p{
     line-height: 1.5rem;
 }
