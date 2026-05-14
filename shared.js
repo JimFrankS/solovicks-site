@@ -9,7 +9,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3 class="footer-heading">Contact</h3>
-                <a class="anchor-text" href="mailto:info@ibantutech.com">info@ibantutech.com</a><br/>
+                <a class="anchor-text" href="mailto:info@ibantu.tech">info@ibantu.tech</a><br/>
                 <a class="anchor-text" href="tel:+263719729537">+263 71 972 9537</a>
             </div>
             <div class="footer-section">
