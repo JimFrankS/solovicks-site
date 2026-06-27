@@ -134,6 +134,126 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact">
+            <div class="sticky-header">
+                <h2 class="lighttext">Start Your Project</h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-intro">Tell us about your project. We'll review your requirements and respond within 24 hours.</p>
+                <form id="project-inquiry-form" class="inquiry-form" method="POST" action="https://formspree.io/f/xbdvygwb" novalidate>
+                    <!-- Project Type Selection -->
+                    <fieldset class="form-group">
+                        <legend class="form-label">Which sector best describes your project?</legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="sector" value="residential" required>
+                                <span class="radio-text">Residential</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sector" value="industrial">
+                                <span class="radio-text">Industrial</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sector" value="mining">
+                                <span class="radio-text">Mining</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Service Type Selection -->
+                    <fieldset class="form-group">
+                        <legend class="form-label">What services do you need?</legend>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="electrical">
+                                <span class="checkbox-text">Electrical Contracting</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="mechanical">
+                                <span class="checkbox-text">Mechanical Engineering</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="automation">
+                                <span class="checkbox-text">Industrial Automation</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="renewable">
+                                <span class="checkbox-text">Renewable Energy</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Project Details -->
+                    <div class="form-group">
+                        <label for="project-scope" class="form-label">Project Description</label>
+                        <textarea id="project-scope" name="project_scope" class="form-input textarea" placeholder="Describe your project, requirements, and any specific challenges..." rows="5" required></textarea>
+                    </div>
+
+                    <!-- Budget and Timeline Row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget Range</label>
+                            <select id="budget" name="budget" class="form-input" required>
+                                <option value="">Select a range...</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k-50k">$15,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="over-100k">Over $100,000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline" class="form-label">Project Timeline</label>
+                            <select id="timeline" name="timeline" class="form-input" required>
+                                <option value="">Select timeline...</option>
+                                <option value="asap">ASAP / Urgent</option>
+                                <option value="1-2-months">1-2 Months</option>
+                                <option value="2-3-months">2-3 Months</option>
+                                <option value="3-6-months">3-6 Months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <fieldset class="form-group">
+                        <legend class="form-label">Your Information</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Full Name</label>
+                                <input type="text" id="contact-name" name="contact_name" class="form-input" placeholder="Your name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email Address</label>
+                                <input type="email" id="contact-email" name="contact_email" class="form-input" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="contact_phone" class="form-input" placeholder="+263 71 933 1594">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company-name" class="form-label">Company/Location</label>
+                                <input type="text" id="company-name" name="company_name" class="form-input" placeholder="Company or site location">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Send Project Inquiry</button>
+                        <p class="form-note">We'll review your inquiry and contact you within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
     <div id="site-footer"></div>
     <script src="shared.js?v=2"></script>
@@ -178,6 +298,64 @@
                 window.addEventListener('resize', () => {
                     if (window.innerWidth > 900) {
                         closeMenu();
+                    }
+                });
+            }
+
+            // Form validation and submission
+            const form = document.getElementById('project-inquiry-form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    // Check if at least one service is selected
+                    const services = formData.getAll('services');
+                    if (services.length === 0) {
+                        alert('Please select at least one service.');
+                        return;
+                    }
+
+                    try {
+                        const submitBtn = form.querySelector('.submit-btn');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Sending...';
+                        submitBtn.disabled = true;
+
+                        // Submit to Formspree
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // Show success message
+                            submitBtn.textContent = '✓ Inquiry Sent Successfully!';
+                            submitBtn.style.opacity = '0.7';
+
+                            // Log success
+                            console.log('Project Inquiry Submitted Successfully');
+
+                            // Reset form after delay
+                            setTimeout(() => {
+                                form.reset();
+                                submitBtn.textContent = originalText;
+                                submitBtn.disabled = false;
+                                submitBtn.style.opacity = '1';
+                            }, 3000);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Error submitting form:', error);
+                        alert('There was an error sending your inquiry. Please try again or contact us directly.');
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
                     }
                 });
             }
