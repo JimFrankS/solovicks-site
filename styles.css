@@ -19,10 +19,22 @@ html {
 body {
     background: #0f2438;
     color: #cbd5e1;
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 6rem;
+}
+
+@media (min-width: 640px) {
+    body {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 6rem;
+    }
 }
 
 #logo-splash {
@@ -156,21 +168,22 @@ nav a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.25rem;
-    width: 44px;
-    height: 44px;
+    gap: 0.4rem;
+    width: 50px;
+    height: 50px;
     border: 1px solid rgba(248, 250, 252, 0.2);
     border-radius: 999px;
     background: rgba(3, 7, 18, 0.85);
     color: var(--color-highlight);
     cursor: pointer;
-    padding: 0.55rem;
+    padding: 0.6rem;
+    flex-shrink: 0;
 }
 
 .menu-toggle span {
     display: block;
-    width: 100%;
-    height: 2px;
+    width: 85%;
+    height: 2.5px;
     border-radius: 999px;
     background: currentColor;
     transition: transform 180ms ease, opacity 180ms ease;
@@ -866,16 +879,56 @@ textarea::placeholder,
 @media (max-width: 640px) {
     .form-row {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .inquiry-form {
-        padding: 1.5rem 1rem;
-        gap: 1.25rem;
+        padding: 2rem 1.5rem;
+        gap: 1.75rem;
+        border-radius: 0.75rem;
+    }
+
+    .form-group {
+        gap: 0.95rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .form-input,
+    textarea,
+    select {
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        gap: 1rem;
+    }
+
+    .radio-label,
+    .checkbox-label {
+        gap: 0.9rem;
+        padding: 0.6rem 0;
+    }
+
+    .radio-text,
+    .checkbox-text {
+        font-size: 0.95rem;
     }
 
     .submit-btn {
         width: 100%;
         align-self: stretch;
+        padding: 1.1rem 2rem;
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+    }
+
+    .form-note {
+        font-size: 0.85rem;
     }
 }
