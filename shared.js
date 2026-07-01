@@ -30,6 +30,7 @@
         </div>
         <div class="footer-credits">
             <p>&copy; ${currentYear} Solovicks Engineering Associates. All rights reserved.</p>
+            <p>Developed & Maintained by <a class="developer-link" href="https://ibantu.tech" target="_blank" rel="noopener noreferrer">iBantu Technologies</a></p>
         </div>
         <a class="scroll-to-top" href="#top-of-page" aria-label="Scroll to top">
             <i class="fa-solid fa-arrow-up"></i>

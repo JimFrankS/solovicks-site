@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Solovicks Engineering Associates</title>
     <meta name="description" content="Solovicks Engineering Associates delivers reliable electrical, mechanical, automation and renewable energy solutions for residential, industrial and mining projects in Zimbabwe.">
     <meta property="og:title" content="Solovicks Engineering Associates | Electrical & Mechanical Engineering">
     <meta property="og:description" content="Reliable engineering solutions for homes, industry and mining operations in Zimbabwe.">
-    <meta property="og:image" content="https://solovickseng.com/public/solovicks_svg.svg">
+    <meta property="og:image" content="https://solovickseng.com/public/solovicks_svg.svg?v=3">
     <meta property="og:url" content="https://solovickseng.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="/public/SOLOVICKS_Favicon_Icon.png?v=1" />
-    <link rel="apple-touch-icon" href="/public/SOLOVICKS_Favicon_Icon.png?v=1" />
-    <link rel="preload" href="/public/solovicks_svg.svg" as="image">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="/public/SOLOVICKS_Favicon_Icon.png?v=3" />
+    <link rel="apple-touch-icon" href="/public/SOLOVICKS_Favicon_Icon.png?v=3" />
+    <link rel="preload" href="/public/solovicks_svg.svg?v=3" as="image">
+    <link rel="stylesheet" href="styles.css?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body id="top-of-page">
     <div class="underlay"></div>
     <div id="logo-splash" aria-hidden="true">
-        <img src="/public/solovicks_svg.svg" alt="Solovicks Engineering Associates logo" />
+        <img src="/public/solovicks_svg.svg?v=3" alt="Solovicks Engineering Associates logo" />
     </div>
     <div id="corner-logo">
-        <img src="/public/solovicks_svg.svg" alt="Solovicks Engineering Associates logo" />
+        <img src="/public/solovicks_svg.svg?v=3" alt="Solovicks Engineering Associates logo" />
     </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+        <a class="anchor-text" href="#about">About</a>
+        <a class="anchor-text" href="#services">Services</a>
+        <a class="anchor-text" href="#sectors">Sectors</a>
+        <a class="anchor-text" href="#contact">Contact</a>
+    </nav>
     <header>
         <a class="brand-link" href="/" aria-label="Solovicks Engineering Associates home">
-            <img class="site-logo" src="/public/solovicks_svg.svg" alt="Solovicks Engineering Associates logo" />
+            <img class="site-logo" src="/public/solovicks_svg.svg?v=3" alt="Solovicks Engineering Associates logo" />
         </a>
         <a href="/">
             <h1>Solovicks Engineering Associates</h1>
         </a>
         <h4>Electrical Engineering | Mechanical Engineering | Industrial Automation</h4>
         <p>Delivering dependable engineering solutions for homes, industry and mining operations with a focus on safety, efficiency and long-term performance.</p>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="site-nav" class="site-nav">
-            <a class="anchor-text" href="#about">About</a>
-            <a class="anchor-text" href="#services">Services</a>
-            <a class="anchor-text" href="#sectors">Sectors</a>
-            <a class="anchor-text" href="#contact">Contact</a>
-        </nav>
         <div class="social-link-container">
             <a class="social-link" href="tel:+263774837056" aria-label="Call +263 77 483 7056">
                 <i class="fa-solid fa-phone"></i>
@@ -66,9 +70,9 @@
         </div>
     </header>
     <main>
-        <section id="about">
+        <section id="about" class="reveal">
             <div class="sticky-header">
-                <h2 class="lighttext">About</h2>
+                <h2 class="lighttext"><span>About</span></h2>
             </div>
             <div class="about-content">
                 <p>Solovicks Engineering Associates is a registered engineering firm focused on delivering practical, reliable solutions across electrical contracting, mechanical systems, industrial automation and renewable energy.</p>
@@ -83,26 +87,29 @@
             </div>
         </section>
 
-        <section id="services">
+        <section id="services" class="reveal">
             <div class="sticky-header">
-                <h2 class="lighttext">Core Services</h2>
+                <h2 class="lighttext"><span>Core Services</span></h2>
             </div>
             <div class="experience-contents">
-                <div class="experience-card">
+                <div class="experience-card" data-index="01">
+                    <div class="card-icon"><i class="ti ti-bolt"></i></div>
                     <p class="tenure">Power & Infrastructure</p>
                     <div class="card-column">
                         <h3 class="card-header">Electrical systems, testing and commissioning</h3>
                         <p>Design, installation, inspection, certification and maintenance of electrical systems for homes, commercial buildings and industrial facilities.</p>
                     </div>
                 </div>
-                <div class="experience-card">
+                <div class="experience-card" data-index="02">
+                    <div class="card-icon"><i class="ti ti-settings"></i></div>
                     <p class="tenure">Mechanical & Automation</p>
                     <div class="card-column">
                         <h3 class="card-header">Mechanical design and control solutions</h3>
                         <p>Mechanical system design, fabrication support, automation integration, control panels, instrumentation and smart building technologies.</p>
                     </div>
                 </div>
-                <div class="experience-card">
+                <div class="experience-card" data-index="03">
+                    <div class="card-icon"><i class="ti ti-sun"></i></div>
                     <p class="tenure">Energy & Efficiency</p>
                     <div class="card-column">
                         <h3 class="card-header">Solar and renewable energy systems</h3>
@@ -112,24 +119,24 @@
             </div>
         </section>
 
-        <section id="sectors">
+        <section id="sectors" class="reveal">
             <div class="sticky-header">
-                <h2 class="lighttext">Target Sectors</h2>
+                <h2 class="lighttext"><span>Target Sectors</span></h2>
             </div>
             <div class="projects-contents">
-                <div class="project-card">
+                <div class="project-card" data-index="04">
                     <div class="card-column">
                         <h3 class="card-header">Residential</h3>
                         <p>Electrical installations, solar solutions, smart home automation and reliable maintenance for homes and estates.</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-index="05">
                     <div class="card-column">
                         <h3 class="card-header">Industrial</h3>
                         <p>Power distribution, machinery support, control systems, automation upgrades and preventive maintenance for productive sites.</p>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-index="06">
                     <div class="card-column">
                         <h3 class="card-header">Mining</h3>
                         <p>Heavy-duty electrical and mechanical support, system reliability improvements and operational solutions built for demanding environments.</p>
@@ -138,9 +145,9 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="reveal">
             <div class="sticky-header">
-                <h2 class="lighttext">Start Your Project</h2>
+                <h2 class="lighttext"><span>Start Your Project</span></h2>
             </div>
             <div class="contact-content">
                 <p class="contact-intro">Tell us about your project. We'll review your requirements and respond within 24 hours.</p>
@@ -251,7 +258,7 @@
 
                     <!-- Submit -->
                     <div class="form-group">
-                        <button type="submit" class="submit-btn">Send Project Inquiry</button>
+                        <button type="submit" class="submit-btn pulsing">Send Project Inquiry</button>
                         <p class="form-note">We'll review your inquiry and contact you within 24 hours.</p>
                     </div>
                 </form>
@@ -259,7 +266,7 @@
         </section>
     </main>
     <div id="site-footer"></div>
-    <script src="shared.js?v=2"></script>
+    <script src="shared.js?v=3"></script>
     <script>
         const splash = document.getElementById('logo-splash');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -304,6 +311,21 @@
                     }
                 });
             }
+
+            // Scroll Reveal Animation Logic
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
 
             // Form validation and submission
             const form = document.getElementById('project-inquiry-form');
