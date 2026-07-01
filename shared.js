@@ -4,13 +4,14 @@
  * edit this file only. All pages will reflect the change automatically.
  */
 (function () {
+    const currentYear = new Date().getFullYear();
     const footerHTML = `
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3 class="footer-heading">Contact</h3>
                 <a class="anchor-text" href="mailto:info@solovickseng.com">info@solovickseng.com</a><br/>
-                <a class="anchor-text" href="tel:+263719331594">+263 71 933 1594</a><br/>
+                <a class="anchor-text" href="tel:+263774837056">+263 77 483 7056</a><br/>
                 <a class="anchor-text" href="https://wa.me/+263719331594" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
             <div class="footer-section">
@@ -28,7 +29,7 @@
             </div>
         </div>
         <div class="footer-credits">
-            <p>&copy; 2026 Solovicks Engineering Associates. All rights reserved.</p>
+            <p>&copy; ${currentYear} Solovicks Engineering Associates. All rights reserved.</p>
         </div>
         <a class="scroll-to-top" href="#top-of-page" aria-label="Scroll to top">
             <i class="fa-solid fa-arrow-up"></i>
@@ -37,6 +38,6 @@
 
     const placeholder = document.getElementById('site-footer');
     if (placeholder) {
-        placeholder.outerHTML = footerHTML;
+        placeholder.innerHTML = footerHTML;
     }
 })();
